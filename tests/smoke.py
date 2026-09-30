@@ -1,11 +1,14 @@
 """Testa a tela, a proteção de acesso, configurações e bloqueio de CSRF."""
 import base64
 import os
+import sys
 import tempfile
+from pathlib import Path
 
 os.environ["MQTT_DATA_DIR"] = tempfile.mkdtemp(prefix="mqtt-web-test-")
 os.environ["WEB_USER"] = "ci-user"
 os.environ["WEB_PASS"] = "ci-only-test-password"
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from app import app  # noqa: E402
 
