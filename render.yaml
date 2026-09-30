@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: mqtt-ex-web
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:${PORT:-10000} --worker-class gthread --workers 1 --threads 8 --timeout 120 --no-preload app:app
+    healthCheckPath: /healthz
+    autoDeployTrigger: commit
+    envVars:
+      - key: MQTT_DATA_DIR
+        value: /tmp/mqtt-ex-web-data
+      - key: WEB_USER
+        sync: false
+      - key: WEB_PASS
+        sync: false
