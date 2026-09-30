@@ -33,7 +33,7 @@ Para um broker sem TLS, desmarque TLS na tela de configuração. As credenciais 
 
 ## Hospedagem para teste
 
-O GitHub guarda o código; ele não executa o servidor Flask pelo GitHub Pages. O `render.yaml` prepara um serviço de teste gratuito no Render e cada envio ao branch principal aciona um deploy. A hospedagem cria HTTPS. Informe `WEB_USER` e `WEB_PASS` nos campos privados do Render. Depois, entre no painel e digite as credenciais MQTT e Telegram nas configurações.
+O GitHub guarda o código; ele não executa o servidor Flask pelo GitHub Pages. O botão abaixo usa o `render.yaml` para criar um serviço de teste gratuito no Render, com HTTPS. Como esse repositório é público e o botão pode ser usado por outras pessoas, o Blueprint começa com deploy automático desligado. Para sua própria instância atualizar a cada envio, conecte o serviço ao GitHub e escolha **Auto-Deploy → On Commit** no Render. Informe `WEB_USER` e `WEB_PASS` nos campos privados do Render. Depois, entre no painel e digite as credenciais MQTT e Telegram nas configurações.
 
 [Iniciar hospedagem gratuita no Render](https://render.com/deploy?repo=https%3A%2F%2Fgithub.com%2Fjesuspity%2Fmqtt-ex-web)
 
