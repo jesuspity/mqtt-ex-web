@@ -35,6 +35,8 @@ Para um broker sem TLS, desmarque TLS na tela de configuração. As credenciais 
 
 O GitHub guarda o código; ele não executa o servidor Flask pelo GitHub Pages. O `render.yaml` prepara um serviço de teste gratuito no Render e cada envio ao branch principal aciona um deploy. A hospedagem cria HTTPS. Informe `WEB_USER` e `WEB_PASS` nos campos privados do Render. Depois, entre no painel e digite as credenciais MQTT e Telegram nas configurações.
 
+[Iniciar hospedagem gratuita no Render](https://render.com/deploy?repo=https%3A%2F%2Fgithub.com%2Fjesuspity%2Fmqtt-ex-web)
+
 O plano gratuito pode suspender o serviço após inatividade e não preserva `settings.json` depois de suspensão ou reinício. Para manter as configurações e o processo MQTT ativos, use um plano pago com disco persistente montado em `/var/data` e defina `MQTT_DATA_DIR=/var/data`. Não há nenhuma cobrança criada por este repositório.
 
 ## Execução
